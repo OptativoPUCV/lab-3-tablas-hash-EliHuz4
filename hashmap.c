@@ -52,8 +52,14 @@ void enlarge(HashMap * map) {
 
 
 HashMap * createMap(long capacity) {
-
-    return NULL;
+    HashMap * Mapa[capacity];
+    for(int i = 0; i < capacity; i++){
+        Mapa[i]->buckets[capacity]->key = NULL;
+        Mapa[i]->buckets[capacity]->value = NULL;
+        Mapa[i]->current = -1;
+        Mapa[i]->size = 0;
+    }
+    return Mapa;
 }
 
 void eraseMap(HashMap * map,  char * key) {    

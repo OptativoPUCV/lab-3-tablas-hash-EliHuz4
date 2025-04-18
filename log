@@ -2,3 +2,15 @@ Fri, Apr 18, 2025  3:20:49 PM:
  tests:  0|6
 total_score: 0/70
 eeef3b7
+Fri, Apr 18, 2025  3:33:08 PM: 
+ hashmap.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'createMap':
+hashmap.c:62:12: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+     return Mapa;
+            ^~~~
+hashmap.c:62:12: error: function returns address of local variable [-Werror=return-local-addr]
+cc1.exe: all warnings being treated as errors
+e34855c
