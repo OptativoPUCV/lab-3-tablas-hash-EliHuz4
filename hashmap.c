@@ -96,20 +96,21 @@ void eraseMap(HashMap * map,  char * key) {
 
 }
 
-Pair * searchMap(HashMap * map,  char * key) {   
+Pair * searchMap(HashMap * map, char * key) {
     long Indice = hash(key, map->capacity);
-    HashMap *Aux = createMap(map->capacity);
-    if(map->buckets[Indice]->value == Aux->buckets[Indice]->value)
-    {
-        return map->buckets[Indice]->value;
-    }
-    else{
-        for(int i = (Indice + 1) % map->capacity; i != Indice; i = (i + 1) % map->capacity)
-        {
-            if(map->buckets[Indice]->value == Aux->buckets[i]->value)
-            {
-                return map->buckets[i]->value;
+
+    for (int i = 0; i < map->capacity; i++) {
+        
+        long PosAux = (Indice + i) % map->capacity;
+
+        if (map->buckets[PosAux] != NULL && map->buckets[PosAux]->key != NULL) {
+
+            if (strcmp(map->buckets[PosAux]->key, key) == 0) {
+
+                map->current = PosAux;
+                return map->buckets[PosAux];
             }
+
         }
     }
     return NULL;
