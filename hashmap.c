@@ -46,7 +46,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         map->buckets[Indice]->value = value;
     }
     else{
-        for(int i = Indice; i != NULL; i++)
+        for(int i = Indice; map->buckets[i] != NULL; i++)
         {
             if(map->buckets[i]->value == NULL && map->buckets[Indice]->key == NULL)
             {
