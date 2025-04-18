@@ -14,3 +14,8 @@ hashmap.c:62:12: error: return from incompatible pointer type [-Werror=incompati
 hashmap.c:62:12: error: function returns address of local variable [-Werror=return-local-addr]
 cc1.exe: all warnings being treated as errors
 e34855c
+Fri, Apr 18, 2025  4:33:43 PM: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+ce8e13c
