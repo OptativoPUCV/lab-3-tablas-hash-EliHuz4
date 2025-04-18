@@ -61,7 +61,6 @@ void insertMap(HashMap * map, char * key, void * value) {
             }
         }
     }
-
 }
 
 void enlarge(HashMap * map) {
@@ -98,8 +97,21 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
-
-
+    long Indice = hash(key, map->capacity);
+    HashMap *Aux = createMap(map->capacity);
+    if(map->buckets[Indice]->value == Aux->buckets[Indice]->value)
+    {
+        return map->buckets[Indice]->value;
+    }
+    else{
+        for(int i = Indice; map->buckets[i] != NULL; i++)
+        {
+            if(map->buckets[Indice]->value == Aux->buckets[i]->value)
+            {
+                return map->buckets[i]->value;
+            }
+        }
+    }
     return NULL;
 }
 
