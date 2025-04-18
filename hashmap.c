@@ -64,7 +64,14 @@ void insertMap(HashMap * map, char * key, void * value) {
 }
 
 void enlarge(HashMap * map) {
-    enlarge_called = 1; //no borrar (testing purposes)
+    Pair ** Aux = map->buckets;
+    long NewCapacity = map->capacity * 2;
+    HashMap * NewMap = createMap(NewCapacity);
+    for(int i = 0; i < map->capacity; i++)
+    {
+        insertMap(NewMap, Aux[i]->key, Aux[i]->value);
+    }
+    free(Aux);
 }
 
 
