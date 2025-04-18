@@ -49,7 +49,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         map->size++;
     }
     else{
-        for( int i = (Indice + 1) % map->capacity ;  i != Indice  ;  i = (i + 1) % map->capacity )
+        for(int i = Indice; map->buckets[i] != NULL; i++)
         {
             if(map->buckets[i] == NULL)
             {
